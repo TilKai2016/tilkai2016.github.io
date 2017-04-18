@@ -272,6 +272,150 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/浅谈Docker/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TilKai">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="TilKaiのblog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="TilKaiのblog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/18/浅谈Docker/" itemprop="url">
+                  浅谈Docker
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-18T17:04:14+08:00">
+                2017-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/04/18/浅谈Docker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/18/浅谈Docker/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/18/浅谈Docker/" class="leancloud_visitors" data-flag-title="浅谈Docker">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="浅谈Docker"><a href="#浅谈Docker" class="headerlink" title="浅谈Docker"></a>浅谈Docker</h1><h2 id="认识Docker"><a href="#认识Docker" class="headerlink" title="认识Docker"></a>认识Docker</h2><h3 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker?"></a>什么是Docker?</h3><p>Docker是一个开源平台，包括Docker引擎和DockerHub注册服务器。</p>
+<blockquote>
+<ul>
+<li><strong>Docker容器引擎</strong>：该引擎可以让开发者打包他们的应用和依赖包到一个可移植的容器中，然后将其发布到任何流行的Linux机器上。</li>
+<li><strong>Docker Hub注册服务器</strong>：用户可以在该服务器上创建自己的镜像库来存储、管理和分享镜像。利用Docker，可以实现软件的一次配置、处处运行。</li>
+</ul>
+</blockquote>
+<p>一般称Docker为“应用程序执行容器”或“软件工业上的集装箱技术”。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/04/18/浅谈Docker/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,203 +509,14 @@
 
       
         
-          
-            <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1><p>本次梯子搭建使用了<a href="https://m.do.co/c/90e360179dca" target="_blank" rel="external">DigitalOcean</a>的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。<br><strong>注意</strong>，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行(暂时的个人理解)。</p>
-<p>参考：</p>
-<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">docker compose官网</a></p>
-<h2 id="Docker-SS-KCP组合的环境配置"><a href="#Docker-SS-KCP组合的环境配置" class="headerlink" title="Docker+SS+KCP组合的环境配置"></a>Docker+SS+KCP组合的环境配置</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p><strong>部分参考<a href="https://github.com/cndocker/kcptun-socks5-ss-server-docker" target="_blank" rel="external">GitHub</a></strong></p>
-<h3 id="Docker源"><a href="#Docker源" class="headerlink" title="Docker源"></a>Docker源</h3><blockquote>
-<p>官网安装地址:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -Lk https://get.docker.com/ | sh</div></pre></td></tr></table></figure>
-<blockquote>
-<p>阿里云安装地址:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -</div></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="基于docker的cndocker-kcptun-socks5-ss-server服务端安装方法"><a href="#基于docker的cndocker-kcptun-socks5-ss-server服务端安装方法" class="headerlink" title="基于docker的cndocker/kcptun-socks5-ss-server服务端安装方法"></a>基于docker的cndocker/kcptun-socks5-ss-server服务端安装方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull cndocker/kcptun-socks5-ss-server:latest</div></pre></td></tr></table></figure>
-<h4 id="下载镜像导入"><a href="#下载镜像导入" class="headerlink" title="下载镜像导入"></a>下载镜像导入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://github.com/cndocker/kcptun-socks5-ss-server-docker/raw/master/images/docker-kcptun-socks5-ss-server.tar</div></pre></td></tr></table></figure>
-<p>镜像导入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker load &lt; docker-kcptun-socks5-ss-server.tar</div></pre></td></tr></table></figure>
-<h3 id="不使用Docker-compose的启动方式-暂未使用"><a href="#不使用Docker-compose的启动方式-暂未使用" class="headerlink" title="不使用Docker-compose的启动方式(暂未使用)"></a>不使用Docker-compose的启动方式(暂未使用)</h3><p>启动命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">docker run -ti --name=kcptun-socks5-ss-server \</div><div class="line">-p 8388:8388 \</div><div class="line">-p 8388:8388/udp \</div><div class="line">-p 34567:34567/udp \</div><div class="line">-p 45678:45678/udp \</div><div class="line">-e RUNENV=kcptunsocks-kcptunss \</div><div class="line">-e SS_SERVER_ADDR=0.0.0.0 \</div><div class="line">-e SS_SERVER_PORT=8388 \</div><div class="line">-e SS_PASSWORD=password \</div><div class="line">-e SS_METHOD=aes-256-cfb \</div><div class="line">-e SS_DNS_ADDR=8.8.8.8 \</div><div class="line">-e SS_UDP=true \</div><div class="line">-e SS_ONETIME_AUTH=true \</div><div class="line">-e SS_FAST_OPEN=true \</div><div class="line">-e KCPTUN_LISTEN=45678 \</div><div class="line">-e KCPTUN_SS_LISTEN=34567 \</div><div class="line">-e KCPTUN_SOCKS5_PORT=12948 \</div><div class="line">-e KCPTUN_KEY=password \</div><div class="line">-e KCPTUN_CRYPT=aes \</div><div class="line">-e KCPTUN_MODE=fast2 \</div><div class="line">-e KCPTUN_MTU=1350 \</div><div class="line">-e KCPTUN_SNDWND=1024 \</div><div class="line">-e KCPTUN_RCVWND=1024 \</div><div class="line">-e KCPTUN_NOCOMP=false \</div><div class="line">cndocker/kcptun-socks5-ss-server:latest</div></pre></td></tr></table></figure>
-<h3 id="变量说明"><a href="#变量说明" class="headerlink" title="变量说明"></a>变量说明</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">变量名</th>
-<th style="text-align:center">默认值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">RUNENV</td>
-<td style="text-align:center">kcptunsocks-kcptunss</td>
-<td style="text-align:left">运行模式（见备注1）：kcptunsocks-kcptunss, kcptunsocks, kcptunss, ss</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_SERVER_ADDR</td>
-<td style="text-align:center">0.0.0.0</td>
-<td style="text-align:left">提供服务的IP地址，建议使用默认的0.0.0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_SERVER_PORT</td>
-<td style="text-align:center">8388</td>
-<td style="text-align:left">SS提供服务的端口，TCP和UDP协议。</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_PASSWORD</td>
-<td style="text-align:center">password</td>
-<td style="text-align:left">服务密码</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_METHOD</td>
-<td style="text-align:center">aes-256-cfb</td>
-<td style="text-align:left">加密方式，可选参数：table, rc4, rc4-md5, aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, camellia-128-cfb, camellia-192-cfb, camellia-256-cfb, cast5-cfb, des-cfb, idea-cfb, rc2-cfb, seed-cfb, salsa20, chacha20 and chacha20-ietf</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_TIMEOUT</td>
-<td style="text-align:center">600</td>
-<td style="text-align:left">连接超时时间</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_DNS_ADDR</td>
-<td style="text-align:center">8.8.8.8</td>
-<td style="text-align:left">SS服务器的DNS地址</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_UDP</td>
-<td style="text-align:center">true</td>
-<td style="text-align:left">开启SS服务器 UDP relay</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_ONETIME_AUTH</td>
-<td style="text-align:center">true</td>
-<td style="text-align:left">开启SS服务器 onetime authentication.</td>
-</tr>
-<tr>
-<td style="text-align:left">SS_FAST_OPEN</td>
-<td style="text-align:center">true</td>
-<td style="text-align:left">开启SS服务器 TCP fast open.</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_LISTEN</td>
-<td style="text-align:center">45678</td>
-<td style="text-align:left">kcptunsocks模式提供服务的端口，UDP协议</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_SS_LISTEN</td>
-<td style="text-align:center">34567</td>
-<td style="text-align:left">kcptunss模式提供服务的端口，UDP协议</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_SOCKS5_PORT</td>
-<td style="text-align:center">12948</td>
-<td style="text-align:left">socks5透明代理端口，不需要对外开放。</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_KEY</td>
-<td style="text-align:center">password</td>
-<td style="text-align:left">服务密码</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_CRYPT</td>
-<td style="text-align:center">aes</td>
-<td style="text-align:left">加密方式，可选参数：aes, aes-128, aes-192, salsa20, blowfish, twofish, cast5, 3des, tea, xtea, xor</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_MODE</td>
-<td style="text-align:center">fast2</td>
-<td style="text-align:left">加速模式，可选参数：fast3, fast2, fast, normal</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_MTU</td>
-<td style="text-align:center">1350</td>
-<td style="text-align:left">MTU值，建议范围：900~1400</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_SNDWND</td>
-<td style="text-align:center">1024</td>
-<td style="text-align:left">服务器端发送参数，对应客户端rcvwnd</td>
-</tr>
-<tr>
-<td style="text-align:left">KCPTUN_RCVWND</td>
-<td style="text-align:center">1024</td>
-<td style="text-align:left">服务器端接收参数，对应客户端sndwnd</td>
-</tr>
-</tbody>
-</table>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/DockerSS%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E.jpeg" alt="变量说明"></p>
-<h3 id="运行参数说明"><a href="#运行参数说明" class="headerlink" title="运行参数说明"></a>运行参数说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* kcptunsocks-kcptunss：同时提供kcptun &amp; socks5（路由器kcptun插件）与kcptun &amp; ss(手机ss客户端)服务，kcptun &amp; socks5服务的对应端口是“KCPTUN_LISTEN”，kcptun &amp; ss服务的SS对应端口“SS_SERVER_PORT”、kcp端口对应“KCPTUN_SS_LISTEN”。</div><div class="line">* kcptunsocks：提供kcptun &amp; socks5（路由器kcptun插件）服务，kcptun &amp; socks5服务的对应端口是“KCPTUN_LISTEN”。</div><div class="line">* kcptunss：提供kcptun &amp; ss(手机ss客户端)服务，SS对应端口“SS_SERVER_PORT”、kcp端口对应“KCPTUN_SS_LISTEN”。</div><div class="line">* ss：提供shadowsocks-libev服务，SS对应端口“SS_SERVER_PORT”。</div></pre></td></tr></table></figure>
-<h3 id="手机客户端kcp参数设置"><a href="#手机客户端kcp参数设置" class="headerlink" title="手机客户端kcp参数设置"></a>手机客户端kcp参数设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--crypt $&#123;KCPTUN_CRYPT&#125; --key $&#123;KCPTUN_KEY&#125; --mtu $&#123;KCPTUN_MTU&#125; --sndwnd $&#123;KCPTUN_RCVWND&#125; --rcvwnd $&#123;KCPTUN_SNDWND&#125; --mode $&#123;KCPTUN_MODE&#125;</div></pre></td></tr></table></figure>
-<p>可参看<a href="http://www.jianshu.com/p/172c38ba6cee" target="_blank" rel="external">android-Shadowsocks设置</a></p>
-<h3 id="带宽计算方法"><a href="#带宽计算方法" class="headerlink" title="带宽计算方法"></a>带宽计算方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">简单的计算带宽方法，以服务器发送带宽为例，其他类似：</div><div class="line">服务器发送带宽=SNDWND*MTU*8/1024/1024=1024*1350*8/1024/1024≈10M</div></pre></td></tr></table></figure>
-<h2 id="使用Docker-compose启动服务"><a href="#使用Docker-compose启动服务" class="headerlink" title="使用Docker-compose启动服务"></a>使用Docker-compose启动服务</h2><h3 id="Docker-compose安装"><a href="#Docker-compose安装" class="headerlink" title="Docker-compose安装:"></a>Docker-compose安装:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</div></pre></td></tr></table></figure>
-<p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">Docker-compose官网</a></p>
-<h3 id="将配置文件夹上传到服务器"><a href="#将配置文件夹上传到服务器" class="headerlink" title="将配置文件夹上传到服务器:"></a>将配置文件夹上传到服务器:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 在本地执行下面命令，其中cp为拷贝，-r表示递归上传，ss为待上传的文件</div><div class="line">scp -r ss root@46.101.186.119:</div></pre></td></tr></table></figure>
-<h3 id="运行docker-compose配置文件"><a href="#运行docker-compose配置文件" class="headerlink" title="运行docker-compose配置文件"></a>运行docker-compose配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 如无法运行，增加执行权限(up为启动)</div><div class="line">docker-compose up</div></pre></td></tr></table></figure>
-<h3 id="配置文件内容说明"><a href="#配置文件内容说明" class="headerlink" title="配置文件内容说明"></a>配置文件内容说明</h3><p><1>. docker-compose.yml</1></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">root@ubuntu-512mb-fra1-01:~/ss# cat docker-compose.yml </div><div class="line">version: &apos;2&apos;</div><div class="line">services:</div><div class="line">  ss:</div><div class="line">    restart: always</div><div class="line">    image: cndocker/kcptun-socks5-ss-server</div><div class="line">    ports:</div><div class="line">      - 23456:23456</div><div class="line">      - 23456:23456/udp</div><div class="line">      - 34567:34567/udp</div><div class="line">    env_file:</div><div class="line">      - ss.env</div><div class="line">    container_name: ss</div></pre></td></tr></table></figure>
-<p>①. 指定镜像；<br>②. 配置docker端口映射到服务器端口；<br>③. <code>ports</code>中的属性对应<code>ss.env</code>中配置的<code>SS_SERVER_PORT</code>(ss暴露的TCP端口和UDP端口)和<code>KCPTUN_SS_LISTEN</code>(kcp暴露的UDP端口)<br>④. 指定env配置文件；<br>⑤. 指定容器名称；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@ubuntu-512mb-fra1-01:~/ss# cat ss.env </div><div class="line">RUNENV=kcptunss</div><div class="line">SS_SERVER_PORT=23456</div><div class="line">SS_PASSWORD=1048576</div><div class="line">KCPTUN_SS_LISTEN=34567</div><div class="line">KCPTUN_KEY=1048576</div></pre></td></tr></table></figure>
-<p>①. 指定运行模式<br>②. ss服务端口号(容器内)<br>③. ss服务密码<br>④. kcp端口号(容器内)<br>⑤. kcp服务密码</p>
-<h4 id="docker-compose命令说明"><a href="#docker-compose命令说明" class="headerlink" title="docker-compose命令说明"></a>docker-compose命令说明</h4><p>docker-compose up –help : 查看docker-compose命令<br>docker-compose up : 启动docker-compose服务<br>docker-compose down : 停止docker-compose服务<br>docker-compose up -d : 后台启动docker-compose服务</p>
-<h4 id="docker部分命令"><a href="#docker部分命令" class="headerlink" title="docker部分命令"></a>docker部分命令</h4><p>docker ps : 查看有哪些docker容器正在运行<br>docker logs ss : 查看某个容器(如ss容器)的运行日志</p>
-<h4 id="查看端口暴露情况"><a href="#查看端口暴露情况" class="headerlink" title="查看端口暴露情况"></a>查看端口暴露情况</h4><p>lsof -i:端口号 查看端口号是否已暴露，有列表表示已经暴露<br><a href="http://blog.csdn.net/nemo2011/article/details/7362071" target="_blank" rel="external">Linux端口以及防火墙端口的查看命令</a></p>
-<h2 id="Google-BBR加速SS的BBR-Docker-SS-KCP的组合"><a href="#Google-BBR加速SS的BBR-Docker-SS-KCP的组合" class="headerlink" title="Google BBR加速SS的BBR+Docker+SS+KCP的组合"></a>Google BBR加速SS的BBR+Docker+SS+KCP的组合</h2><p>本次执行是在Ubuntu4和8的内核版本上进行的，其他版本不一定适配，建议先在测试环境尝试。</p>
-<p>参考了以下的链接<a href="https://shadowsocks.info/tcp-bbr/" target="_blank" rel="external">Shadowsocks教程:TCP加速 BBR 一键安装</a>，该链接还提供了其他Linux系统的BBR安装教程。</p>
-<h3 id="安装4-9的内核版本，依次执行以下两步操作："><a href="#安装4-9的内核版本，依次执行以下两步操作：" class="headerlink" title="安装4.9的内核版本，依次执行以下两步操作："></a>安装4.9的内核版本，依次执行以下两步操作：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9-rc8/linux-image-4.9.0-040900rc8-generic_4.9.0-040900rc8.201612051443_amd64.deb</div><div class="line">dpkg -i linux-image-4.9.0*.deb</div></pre></td></tr></table></figure>
-<h3 id="删除其他版本的内核"><a href="#删除其他版本的内核" class="headerlink" title="删除其他版本的内核"></a>删除其他版本的内核</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dpkg -l|grep linux-image</div><div class="line">apt-get remove 列表中其他内核的名称</div></pre></td></tr></table></figure>
-<h3 id="更新-grub-系统引导文件并重启"><a href="#更新-grub-系统引导文件并重启" class="headerlink" title="更新 grub 系统引导文件并重启"></a>更新 grub 系统引导文件并重启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">update-grub</div><div class="line">reboot</div></pre></td></tr></table></figure>
-<h3 id="开启BBR"><a href="#开启BBR" class="headerlink" title="开启BBR"></a>开启BBR</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</div><div class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</div></pre></td></tr></table></figure>
-<h3 id="保存生效"><a href="#保存生效" class="headerlink" title="保存生效"></a>保存生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl -p</div></pre></td></tr></table></figure>
-<h3 id="查看是否配置启动成功"><a href="#查看是否配置启动成功" class="headerlink" title="查看是否配置启动成功"></a>查看是否配置启动成功</h3><p>执行<code>sysctl net.ipv4.tcp_available_congestion_control</code>，如果结果中有<code>bbr</code>, 则证明你的内核已开启<code>bbr</code>，<br>执行<code>lsmod | grep bbr</code>, 看到有<code>tcp_bbr</code>模块即说明<code>bbr</code>已启动成功。</p>
-<h3 id="在SSR配置成功的基础上拉取Docker仓库"><a href="#在SSR配置成功的基础上拉取Docker仓库" class="headerlink" title="在SSR配置成功的基础上拉取Docker仓库"></a>在SSR配置成功的基础上拉取Docker仓库</h3><h4 id="更新源并采用下面的方式安装docker"><a href="#更新源并采用下面的方式安装docker" class="headerlink" title="更新源并采用下面的方式安装docker"></a>更新源并采用下面的方式安装docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install docker.io</div></pre></td></tr></table></figure>
-<h3 id="后续步骤"><a href="#后续步骤" class="headerlink" title="后续步骤"></a>后续步骤</h3><p>此时就可以按照 Docker+SS+KCP组合中的步骤继续安装并启动Docker-SS服务了，</p>
-<p>(开始的点:”基于docker的cndocker/kcptun-socks5-ss-server服务端安装方法”)</p>
-<h2 id="在路由器配置科学上网"><a href="#在路由器配置科学上网" class="headerlink" title="在路由器配置科学上网"></a>在路由器配置科学上网</h2><p><a href="http://broccoliii.me/2016/08/09/R6300_v2_Merlin/" target="_blank" rel="external">参考网件 R6300 V2 刷梅林固件</a>，虽然该教程已经很是详细，但为了防止后面链接失效，本人还是Copy并整理了一下，以供以后使用时参考。</p>
-<p><strong>注：</strong><br>坑1:刷梅林时在ASUS登录页面默认用户名密码为admin和admin，如果该用户名密码的组合不正确，建议再尝试admin和password的组合，以及adsl和ads11234的组合</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WPA 密钥应为 8~63 个字符的字符串或 64 个十六进制字符。如果您将本字段保留空白，系统将会指定 00000000 作为您的通关密语。</div></pre></td></tr></table></figure>
-<p>下面开始关于网件 R6300 V2 刷梅林固件的教程整理。</p>
-<h3 id="刷机文件整理打包"><a href="#刷机文件整理打包" class="headerlink" title="刷机文件整理打包"></a>刷机文件整理打包</h3><p><a href="https://pan.baidu.com/s/1slPA8cl" target="_blank" rel="external">参考的博主提供的百度云盘地址</a>，密码是<code>gnif</code>；<br>防止博主网盘链接失效，<a href="https://pan.baidu.com/s/1kVv2QuN" target="_blank" rel="external">本人的存储地址</a>，密码是<code>1a89</code>；</p>
-<p>简单介绍压缩包里的几个文件各是什么：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">factory-to-dd-wrt.chk （DD 过渡固件）</div><div class="line">R6300V2_merlin_1.2.trx （1.2 正式过渡固件）</div><div class="line">R6300V2_380.57_X6.5.trx (最新正式版固件)</div><div class="line">R6300V2-back-to-ofw.trx （刷回需要的网件原厂固件）</div></pre></td></tr></table></figure>
-<h3 id="刷merlin的四个步骤"><a href="#刷merlin的四个步骤" class="headerlink" title="刷merlin的四个步骤"></a>刷merlin的四个步骤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 原厂固件恢复出厂设置</div><div class="line">2. 刷入 DD 过渡固件</div><div class="line">3. 刷入 Merlin 1.2 固件</div><div class="line">4. 刷入 Merlin 最新正式版固件</div></pre></td></tr></table></figure>
-<h3 id="恢复出厂设置"><a href="#恢复出厂设置" class="headerlink" title="恢复出厂设置"></a>恢复出厂设置</h3><p>登录 `192.168.1.1) -&gt; 高级 -&gt; 管理 -&gt; 备份设置 -&gt; 恢复出厂缺省设置 -&gt; 抹除。</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/reset.jpg" alt="reset"></p>
-<h3 id="刷入-DD-过渡固件"><a href="#刷入-DD-过渡固件" class="headerlink" title="刷入 DD 过渡固件"></a>刷入 DD 过渡固件</h3><p>高级 -&gt; 管理 -&gt; 路由升级 -&gt; 上传升级。</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/upload_dd.jpg" alt="upload_dd"></p>
-<p>耐心等待。。</p>
-<h3 id="在-DD-固件中刷入-Merlin-1-2-固件"><a href="#在-DD-固件中刷入-Merlin-1-2-固件" class="headerlink" title="在 DD 固件中刷入 Merlin 1.2 固件"></a>在 DD 固件中刷入 Merlin 1.2 固件</h3><p>安装好 DD 固件后，浏览器会跳转到新的路由系统后台，之后设置好登录名与密码。</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/setup_username_password.jpg" alt="setup_username_password"></p>
-<p>我们要开启 <code>SSH</code> 服务，等会我们会连上来查看一些配置项是否正确。<br>选择 <code>SSHd</code> 为 <code>enable</code>，然后点击 <code>save</code> 再点击 <code>Apply Setting</code></p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/setup_ssh.jpg" alt="setup_ssh"></p>
-<p>当然我们有需要可以设置一下简体中文</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/setup_chinese.png" alt="setup_chinese"></p>
-<p>接着打开 <code>Terminal</code>，<code>SSH</code> 到 <code>root@192.168.1.1</code>，输入我们刚刚设置过的密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@192.168.1.1</div></pre></td></tr></table></figure>
-<p>连上后运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nvram get boardnum</div><div class="line">nvram get boardtype</div><div class="line">nvram get boardrev</div></pre></td></tr></table></figure>
-<p>如果运行结果如下图所示那么恭喜你 DD 固件已经刷入成功</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/terminal.png" alt="terminal"></p>
-<p>如果数值不对，那么回到开头第一步重新开始.</p>
-<h3 id="刷入-Merlin"><a href="#刷入-Merlin" class="headerlink" title="刷入 Merlin"></a>刷入 Merlin</h3><p>进入 DD 固件升级页面，先刷入梅林过渡固件 R6300V2_merlin_1.2.trx</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/upload_merlin.jpg" alt="upload_merlin"></p>
-<p>经过几分钟等待，路由会自动重启，进入设置向导页。</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/setup_guide.png" alt="setup_guide"></p>
-<p>在 高级 -&gt; 系统管理 -&gt; 固件升级 选择 R6300V2_380.57_X6.5.trx<br>如果你看到这个文章年代有点久远了，建议你网上搜一下最新版，<a href="http://koolshare.io/merlin_8wan_firmware/R6300V2/" target="_blank" rel="external">试试看这里~</a></p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/merlin_new.png" alt="merlin_new"></p>
-<p>重启之后需要恢复出厂设置，如图所示：</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/reset01.png" alt="reset01"></p>
-<p>重启后格式化JFFS分区并立即重启：</p>
-<p><img src="http://ohx3k2vj3.bkt.clouddn.com/jffs.png" alt="jffs"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Format JFFS partition at next boot 的意思是在下次开机时格式化JFFS分区。</div><div class="line">Enable JFFS custom scripts and configs 的意思是启用JFFS分区的修改。</div></pre></td></tr></table></figure>
-<p>每次更新梅林固件都需要重复这样的操作，等待重启成功之后就开始玩耍吧~</p>
-<p><strong>PS</strong>:如果你还想回到原厂</p>
-<p>和上一步相同 高级 -&gt; 系统管理 -&gt; 固件升级<br>选择 <code>R6300V2_back-to-ofw.trx</code> 刷入，注意等3分钟左右，灯全部亮起后，找一根竹签或者笔，按住路由器背后的RESET开关10秒左右再松开，即可进入原厂系统~</p>
-<h3 id="shadowsocks选项配置"><a href="#shadowsocks选项配置" class="headerlink" title="shadowsocks选项配置"></a>shadowsocks选项配置</h3><p><img src="http://ohx3k2vj3.bkt.clouddn.com/R6300V2SS.jpeg" alt="R6300V2SS"></p>
-<p><code>DNS</code>设置<code>国外DNS</code>为<code>DNS2SOCKS</code>，值为<code>8.8.8.8:53</code></p>
-
-          
+          <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/04/18/Docker-SS-KCP梯子搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -770,7 +725,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

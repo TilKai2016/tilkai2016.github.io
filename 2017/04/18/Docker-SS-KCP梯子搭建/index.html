@@ -84,12 +84,12 @@
 
 
 
-<meta name="description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta name="description" content="Dokcer+SS+KCP搭建梯子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker+SS+KCP梯子搭建">
 <meta property="og:url" content="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/index.html">
 <meta property="og:site_name" content="TilKaiのblog">
-<meta property="og:description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta property="og:description" content="Dokcer+SS+KCP搭建梯子">
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/DockerSS%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E.jpeg">
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/reset.jpg">
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/upload_dd.jpg">
@@ -103,10 +103,10 @@
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/reset01.png">
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/jffs.png">
 <meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/R6300V2SS.jpeg">
-<meta property="og:updated_time" content="2017-04-18T03:22:12.000Z">
+<meta property="og:updated_time" content="2017-04-18T09:03:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker+SS+KCP梯子搭建">
-<meta name="twitter:description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta name="twitter:description" content="Dokcer+SS+KCP搭建梯子">
 <meta name="twitter:image" content="http://ohx3k2vj3.bkt.clouddn.com/DockerSS%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E.jpeg">
 
 
@@ -374,7 +374,8 @@
       
 
       
-        <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1><p>本次梯子搭建使用了<a href="https://m.do.co/c/90e360179dca" target="_blank" rel="external">DigitalOcean</a>的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。<br><strong>注意</strong>，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行(暂时的个人理解)。</p>
+        <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1><a id="more"></a>
+<p>本次梯子搭建使用了<a href="https://m.do.co/c/90e360179dca" target="_blank" rel="external">DigitalOcean</a>的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。<br><strong>注意</strong>，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行(暂时的个人理解)。</p>
 <p>参考：</p>
 <p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">docker compose官网</a></p>
 <h2 id="Docker-SS-KCP组合的环境配置"><a href="#Docker-SS-KCP组合的环境配置" class="headerlink" title="Docker+SS+KCP组合的环境配置"></a>Docker+SS+KCP组合的环境配置</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p><strong>部分参考<a href="https://github.com/cndocker/kcptun-socks5-ss-server-docker" target="_blank" rel="external">GitHub</a></strong></p>
@@ -614,6 +615,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/18/浅谈Docker/" rel="prev" title="浅谈Docker">
+                浅谈Docker <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -703,7 +708,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

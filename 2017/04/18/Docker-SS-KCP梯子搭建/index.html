@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="科学上网,Docker,ShadowSocks," />
 
 
 
@@ -84,15 +84,30 @@
 
 
 
-<meta name="description" content="知而慎行">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TilKaiのblog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker+SS+KCP梯子搭建">
+<meta property="og:url" content="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/index.html">
 <meta property="og:site_name" content="TilKaiのblog">
-<meta property="og:description" content="知而慎行">
+<meta property="og:description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/DockerSS%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E.jpeg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/reset.jpg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/upload_dd.jpg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/setup_username_password.jpg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/setup_ssh.jpg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/setup_chinese.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/terminal.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/upload_merlin.jpg">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/setup_guide.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/merlin_new.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/reset01.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/jffs.png">
+<meta property="og:image" content="http://ohx3k2vj3.bkt.clouddn.com/R6300V2SS.jpeg">
+<meta property="og:updated_time" content="2017-04-18T03:22:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TilKaiのblog">
-<meta name="twitter:description" content="知而慎行">
+<meta name="twitter:title" content="Docker+SS+KCP梯子搭建">
+<meta name="twitter:description" content="Dokcer+SS+KCP搭建梯子本次梯子搭建使用了DigitalOcean的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。注意，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行">
+<meta name="twitter:image" content="http://ohx3k2vj3.bkt.clouddn.com/DockerSS%E5%8F%98%E9%87%8F%E8%AF%B4%E6%98%8E.jpeg">
 
 
 
@@ -120,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/"/>
 
 
 
 
 
-  <title> TilKaiのblog </title>
+  <title> Docker+SS+KCP梯子搭建 | TilKaiのblog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,9 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,9 +274,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -296,10 +309,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/18/Docker-SS-KCP梯子搭建/" itemprop="url">
-                  Docker+SS+KCP梯子搭建
-                </a>
+                Docker+SS+KCP梯子搭建
               
             
           </h1>
@@ -364,9 +374,7 @@
       
 
       
-        
-          
-            <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1><p>本次梯子搭建使用了<a href="https://m.do.co/c/90e360179dca" target="_blank" rel="external">DigitalOcean</a>的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。<br><strong>注意</strong>，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行(暂时的个人理解)。</p>
+        <h1 id="Dokcer-SS-KCP搭建梯子"><a href="#Dokcer-SS-KCP搭建梯子" class="headerlink" title="Dokcer+SS+KCP搭建梯子"></a>Dokcer+SS+KCP搭建梯子</h1><p>本次梯子搭建使用了<a href="https://m.do.co/c/90e360179dca" target="_blank" rel="external">DigitalOcean</a>的VPS服务器，操作系统选择了Ubuntu，分别尝试了Docker+SS+KCP的组合以及BBR+Docker+SS+KCP的组合，下面将会分别介绍这两种的搭建过程。<br><strong>注意</strong>，使用BBR进行TCP加速需要升级内核版本的操作，Docker的安装配置应该在BBR安装成功后进行，这点很重要，因为内核升级后可能导致Docker不能运行(暂时的个人理解)。</p>
 <p>参考：</p>
 <p><a href="https://docs.docker.com/compose/install/" target="_blank" rel="external">docker compose官网</a></p>
 <h2 id="Docker-SS-KCP组合的环境配置"><a href="#Docker-SS-KCP组合的环境配置" class="headerlink" title="Docker+SS+KCP组合的环境配置"></a>Docker+SS+KCP组合的环境配置</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p><strong>部分参考<a href="https://github.com/cndocker/kcptun-socks5-ss-server-docker" target="_blank" rel="external">GitHub</a></strong></p>
@@ -561,177 +569,85 @@
 <h3 id="shadowsocks选项配置"><a href="#shadowsocks选项配置" class="headerlink" title="shadowsocks选项配置"></a>shadowsocks选项配置</h3><p><img src="http://ohx3k2vj3.bkt.clouddn.com/R6300V2SS.jpeg" alt="R6300V2SS"></p>
 <p><code>DNS</code>设置<code>国外DNS</code>为<code>DNS2SOCKS</code>，值为<code>8.8.8.8:53</code></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/16/Vi-Vim-键盘图及其基本命令/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="TilKai">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="TilKaiのblog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="TilKaiのblog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/16/Vi-Vim-键盘图及其基本命令/" itemprop="url">
-                  Vi-Vim-键盘图及其基本命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-16T17:16:32+08:00">
-                2017-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/科学上网/" rel="tag"># 科学上网</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2017/04/16/Vi-Vim-键盘图及其基本命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/16/Vi-Vim-键盘图及其基本命令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-
+            <a href="/tags/ShadowSocks/" rel="tag"># ShadowSocks</a>
           
-
-          
-          
-             <span id="/2017/04/16/Vi-Vim-键盘图及其基本命令/" class="leancloud_visitors" data-flag-title="Vi-Vim-键盘图及其基本命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<p><strong><a href="http://www.linuxidc.com/Linux/2015-07/119992.htm">Vi(Vim)键盘图及其基本命令</a></strong></p>
-</blockquote>
-<hr>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/16/Vi-Vim-键盘图及其基本命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/16/Vi-Vim-键盘图及其基本命令/" rel="next" title="Vi-Vim-键盘图及其基本命令">
+                <i class="fa fa-chevron-left"></i> Vi-Vim-键盘图及其基本命令
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/04/18/Docker-SS-KCP梯子搭建/"
+     data-title="Docker+SS+KCP梯子搭建"
+     data-content=""
+     data-url="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -739,6 +655,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/18/Docker-SS-KCP梯子搭建/"
+           data-title="Docker+SS+KCP梯子搭建" data-url="http://yoursite.com/2017/04/18/Docker-SS-KCP梯子搭建/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -758,8 +682,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -805,6 +738,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dokcer-SS-KCP搭建梯子"><span class="nav-number">1.</span> <span class="nav-text">Dokcer+SS+KCP搭建梯子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-SS-KCP组合的环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">Docker+SS+KCP组合的环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Docker"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker源"><span class="nav-number">1.1.2.</span> <span class="nav-text">Docker源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于docker的cndocker-kcptun-socks5-ss-server服务端安装方法"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">基于docker的cndocker/kcptun-socks5-ss-server服务端安装方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载镜像导入"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">下载镜像导入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不使用Docker-compose的启动方式-暂未使用"><span class="nav-number">1.1.4.</span> <span class="nav-text">不使用Docker-compose的启动方式(暂未使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量说明"><span class="nav-number">1.1.5.</span> <span class="nav-text">变量说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行参数说明"><span class="nav-number">1.1.6.</span> <span class="nav-text">运行参数说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机客户端kcp参数设置"><span class="nav-number">1.1.7.</span> <span class="nav-text">手机客户端kcp参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带宽计算方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">带宽计算方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Docker-compose启动服务"><span class="nav-number">1.2.</span> <span class="nav-text">使用Docker-compose启动服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-compose安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">Docker-compose安装:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将配置文件夹上传到服务器"><span class="nav-number">1.2.2.</span> <span class="nav-text">将配置文件夹上传到服务器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行docker-compose配置文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">运行docker-compose配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件内容说明"><span class="nav-number">1.2.4.</span> <span class="nav-text">配置文件内容说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose命令说明"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">docker-compose命令说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker部分命令"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">docker部分命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看端口暴露情况"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">查看端口暴露情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-BBR加速SS的BBR-Docker-SS-KCP的组合"><span class="nav-number">1.3.</span> <span class="nav-text">Google BBR加速SS的BBR+Docker+SS+KCP的组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装4-9的内核版本，依次执行以下两步操作："><span class="nav-number">1.3.1.</span> <span class="nav-text">安装4.9的内核版本，依次执行以下两步操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除其他版本的内核"><span class="nav-number">1.3.2.</span> <span class="nav-text">删除其他版本的内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-grub-系统引导文件并重启"><span class="nav-number">1.3.3.</span> <span class="nav-text">更新 grub 系统引导文件并重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启BBR"><span class="nav-number">1.3.4.</span> <span class="nav-text">开启BBR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存生效"><span class="nav-number">1.3.5.</span> <span class="nav-text">保存生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看是否配置启动成功"><span class="nav-number">1.3.6.</span> <span class="nav-text">查看是否配置启动成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在SSR配置成功的基础上拉取Docker仓库"><span class="nav-number">1.3.7.</span> <span class="nav-text">在SSR配置成功的基础上拉取Docker仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更新源并采用下面的方式安装docker"><span class="nav-number">1.3.7.1.</span> <span class="nav-text">更新源并采用下面的方式安装docker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续步骤"><span class="nav-number">1.3.8.</span> <span class="nav-text">后续步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在路由器配置科学上网"><span class="nav-number">1.4.</span> <span class="nav-text">在路由器配置科学上网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#刷机文件整理打包"><span class="nav-number">1.4.1.</span> <span class="nav-text">刷机文件整理打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷merlin的四个步骤"><span class="nav-number">1.4.2.</span> <span class="nav-text">刷merlin的四个步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复出厂设置"><span class="nav-number">1.4.3.</span> <span class="nav-text">恢复出厂设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷入-DD-过渡固件"><span class="nav-number">1.4.4.</span> <span class="nav-text">刷入 DD 过渡固件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-DD-固件中刷入-Merlin-1-2-固件"><span class="nav-number">1.4.5.</span> <span class="nav-text">在 DD 固件中刷入 Merlin 1.2 固件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刷入-Merlin"><span class="nav-number">1.4.6.</span> <span class="nav-text">刷入 Merlin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shadowsocks选项配置"><span class="nav-number">1.4.7.</span> <span class="nav-text">shadowsocks选项配置</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -910,6 +859,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
